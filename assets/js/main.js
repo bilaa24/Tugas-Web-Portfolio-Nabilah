@@ -30,7 +30,13 @@ const linkAction = () =>{
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-
+const scrollHeader = () =>{
+    const header = document.getElementById('header')
+    //When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+    this.scrollY >=50 ? header.classList.add('scroll-header')
+                      : header.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
 
 /*=============== ADD BLUR TO HEADER ===============*/
 const blurHeader = () =>{
@@ -69,7 +75,6 @@ const sendEmail = (e) =>{
 
 contactForm.addEventListener('submit', sendEmail)
 
-
 /*=============== SHOW SCROLL UP ===============*/ 
 const scrollUp = () => {
     const scrollUp = document.getElementById('scroll-up')
@@ -80,7 +85,7 @@ const scrollUp = () => {
 window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/  
-const sections = document.querySelectorAll('selection[id]')
+const sections = document.querySelectorAll('section[id]')
 
 const scrollActive = () =>{
     const scrollY = window.pageYOffset
@@ -93,7 +98,7 @@ const scrollActive = () =>{
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
             sectionsClass.classList.add('active-link')
-        }else{
+        } else{
             sectionsClass.classList.remove('active-link')
         }
     })
@@ -101,3 +106,16 @@ const scrollActive = () =>{
 window.addEventListener('scroll', scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin   :'top',
+    distance :'60px', 
+    duration : 2500,
+    delay    : 400,
+    //reset: true //animation repeat
+})
+
+sr.reveal('.home__data, .home__social, .contact__container, .footer__container')
+sr.reveal('.home__image', {origin: 'bottom'})
+sr.reveal('.about__data, .skills__data', {origin: 'left'})
+sr.reveal('.about__image, .skills__content', {origin: 'right'})
+sr.reveal('.services__card, .projects__card', {interval: 100})

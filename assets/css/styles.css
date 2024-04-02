@@ -19,8 +19,8 @@
       -> Copy the color mode (HSL)
   */
 
-  --hue: 210;
-  --first-color: hsl(var(--hue), 71%, 58%);
+  --hue: 181;
+  --first-color: hsl(var(--hue), 95%, 23%);
   --first-color-alt: hsl(var(--hue), 56%, 35%);
   --title-color: hsl(228, 8%, 95%);
   --text-color: hsl(228, 8%, 65%);
@@ -316,7 +316,7 @@ svg {
 }
 
 .home__blob{
-  width: 320px;
+  width: 325px;
   fill: var(--first-color);
   filter:drop-shadow(0 12px 12px hsla(var(--hue), 100%,  40%, .2)) 
 }
@@ -640,11 +640,11 @@ svg {
   font-size: 1.25rem;
   box-shadow: 0 4px 12px hsla(228, 15%, 8%, .4);
   z-index: var(--z-tooltip);
-  transition: bottom .4s, transform .4s;
+  transition: transform .4s, bottom .4s;
 }
 
 .scrollup:hover{
-  transform: translateY(-.25rem);
+  transform: translateY(-.45rem);
 }
 
 /* Show Scroll Up */
@@ -767,7 +767,7 @@ svg {
   }
   .home__blob{
     width: 445px;
-    margin-right: 25px;
+    /* margin-right: -25px; */
   }
   .home__content{
     row-gap: 4.5rem;
